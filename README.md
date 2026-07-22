@@ -23,6 +23,18 @@ Memory Management provides a C++ simulation environment for studying how memory 
 
 The repository is structured as a C++ project with CMake build files, documentation, and generated visualization frames. The design supports both command-line experimentation and visual explanation of memory behavior.
 
+## Architecture Diagram
+
+```mermaid
+flowchart LR
+  Config["Simulation Configuration"] --> Engine["C++ Memory Simulation"]
+  Engine --> States["Memory State Frames"]
+  States --> PNG["PNG Frame Sequence"]
+  PNG --> GIF["Animated Visualization"]
+  Engine --> Metrics["Allocation and Paging Behavior"]
+  Metrics --> Docs["Requirement and Analysis Documents"]
+```
+
 ## Technology Stack
 
 - C++ implementation for systems simulation.
