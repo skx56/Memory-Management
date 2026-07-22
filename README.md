@@ -1,99 +1,54 @@
-🧠 Memory Management & Cache Simulator
+# Memory Management Simulator
 
-A C++ command-line simulator that demonstrates core operating system memory management techniques and multi-level CPU cache behavior.
-The project focuses on allocator design, fragmentation handling, and cache performance analysis.
+<p align="center">
+<img alt="C++" src="https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge" />
+  <img alt="CMake" src="https://img.shields.io/badge/CMake-064F8C?style=for-the-badge" />
+  <img alt="Operating Systems" src="https://img.shields.io/badge/Operating%20Systems-374151?style=for-the-badge" />
+</p>
 
-⚠️ Educational simulation — not a real OS kernel
-🎥 Demo Video: https://drive.google.com/drive/folders/14jmG9NAoGJIFyu7WlCqCi5NeEaEttyoZ?usp=sharing
+<p align="center">
+  <strong>A systems-level simulator for visualizing memory allocation, page behavior, and operating-system memory management concepts.</strong>
+</p>
 
-🚀 Key Features
-🔹 Dynamic Memory Allocation
+Memory Management provides a C++ simulation environment for studying how memory state changes over time. It includes build configuration, visual frame artifacts, and supporting documentation around requirements and implementation behavior.
 
-Simulates physical memory using a contiguous byte array
+## Core Capabilities
 
-Supports First Fit, Best Fit, and Worst Fit strategies
+- Simulates memory-management behavior for operating-systems study.
+- Uses CMake for repeatable C++ builds.
+- Produces visual frame artifacts for state-by-state inspection.
+- Includes requirements analysis and project summary documentation.
 
-Block splitting and coalescing to reduce fragmentation
+## Technical Architecture
 
-Runtime strategy switching via CLI
+The repository is structured as a C++ project with CMake build files, documentation, and generated visualization frames. The design supports both command-line experimentation and visual explanation of memory behavior.
 
-🔹 Interactive CLI
-malloc <size>        Allocate memory
-free <address>      Free memory
-strategy <type>     first | best | worst
-stats               Memory statistics
-access <var>        Cache access simulation
-cachestats          Cache metrics
-stress <n> <max>    Stress test allocator
-dump                Export memory layout
-exit                Quit simulator
+## Technology Stack
 
-🔹 Memory Metrics
+- C++ implementation for systems simulation.
+- CMake build workflow.
+- Generated PNG/GIF artifacts for memory-state visualization.
+- Project requirement documents for traceable implementation planning.
 
-Used vs free memory
+## Repository Structure
 
-Number of blocks
+- `CMakeLists.txt` - Build configuration.
+- `memory.gif` - Rendered memory-management visualization.
+- `frames/png` - Generated frame sequence.
+- `PROJECT_REQUIREMENTS_ANALYSIS.md` - Requirements analysis.
+- `REQUIREMENTS_SUMMARY.md` - Requirement summary.
 
-Largest free block
+## Getting Started
 
-External fragmentation ratio
+```bash
+cmake -S . -B build
+cmake --build build
+```
 
-Allocation success/failure counts
+```bash
+./build/Memory-Management
+```
 
-🧠 Cache Simulation
+## Professional Context
 
-Simulates a 3-level CPU cache hierarchy:
-
-Level	Size
-L1	32 KB
-L2	256 KB
-L3	8 MB
-
-Set-associative caches
-
-LRU replacement policy
-
-Hit/miss tracking per level
-
-Average Memory Access Time (AMAT)
-
-Access flow:
-
-CPU → L1 → L2 → L3 → Main Memory
-
-🧪 Stress Testing & Visualization
-
-Randomized allocation/free workloads
-
-JSON export of memory layout
-
-Python-based visualization for fragmentation analysis
-
-▶️ Build & Run
-g++ src/*.cpp -I include -std=c++17 -O2 -o build/mma_cli
-./build/mma_cli
-
-
-Run with test workload:
-
-./build/mma_cli < tests/workloads/cache_lru.txt
-
-⚠️ Limitations
-
-Single-threaded
-
-No virtual memory or paging
-
-Fixed memory pool
-
-Symbolic cache latencies
-
-No alignment handling
-
-👤 Author
-
-Saksham Ojha
-
-📄 License
-
-Created for educational and academic purposes.
+This project demonstrates C++ systems programming, OS concept modeling, and visual technical communication.
